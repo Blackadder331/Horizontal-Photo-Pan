@@ -43,3 +43,21 @@ window.ontouchend = e => handleOnUp(e.touches[0]);
 window.onmousemove = e => handleOnMove(e);
 
 window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+//write a function that changes the body background color over 1 second with ease-in-out starting from page load. Cycle a random shade of gray that repeats infinitely 
+function changeBackgroundColor() {
+  const colors = ["#D3D3D3", "#A9A9A9", "#808080", "#696969", "#778899"];
+  let i = 0;
+
+  setInterval(() => {
+    document.body.style.backgroundColor = colors[i];
+    i++;
+
+    if (i === colors.length) {
+      i = 0;
+    }
+  }, 1000);
+
+  document.body.style.transition = "background-color 1s ease-in-out";
+}
+changeBackgroundColor();
